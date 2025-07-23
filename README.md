@@ -39,7 +39,7 @@ UI:
 - [x] WarnaBot
 - [x] Visual Simulator
 - [ ] Tes Diagnosis
-- [ ] Direktori Dokter & Rujukan
+- [x] Direktori Dokter & Rujukan
 - [ ] Pusat Edukasi
 - [ ] Responsive Design
 

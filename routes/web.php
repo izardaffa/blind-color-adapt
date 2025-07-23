@@ -29,3 +29,15 @@ Route::get('/ai-assistant-warnabot', function () {
 Route::get('/visual-simulator', function () {
     return view('visual-simulator');
 })->name('visual-simulator');
+
+Route::get('/adaptive-ishihara-test', function () {
+    return view('adaptive-ishihara-test');
+})->name('adaptive-ishihara-test');
+
+Route::get('/direktori-dokter-rujukan', function () {
+    return view('direktori-dokter-rujukan');
+})->name('direktori-dokter-rujukan');
+
+Route::get('/pusat-edukasi', function () {
+    return view('pusat-edukasi');
+})->name('pusat-edukasi');

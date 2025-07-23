@@ -86,41 +86,4 @@
       </div>
     </div>
   </div>
-
-  <x-slot:script>
-    <script>
-      const jenisSimulasi = document.getElementById('jenisSimulasi');
-      const panah = document.getElementById('panah');
-      const btnBlindcolor = document.querySelectorAll('.btn-blindcolor');
-      
-      const simulatedImg = document.querySelector('.simulated-img');
-      const btnGrayscale = document.querySelector('.bc-grayscale');
-      const btnProtan = document.querySelector('.bc-protan');
-      const btnDeutan = document.querySelector('.bc-deutan');
-      const btnTritan = document.querySelector('.bc-tritan');
-
-      jenisSimulasi.addEventListener('click', () => {
-        for (let i = 0; i < btnBlindcolor.length; i++) {
-          btnBlindcolor[i].classList.toggle('hidden');
-        }
-        panah.classList.toggle('rotate-180');
-      });
-
-      btnGrayscale.addEventListener('click', () => {
-        simulatedImg.src = '{{ url('/visual-simulator-assets/sample-1-grayscale.png') }}';
-      });
-
-      btnProtan.addEventListener('click', () => {
-        simulatedImg.src = '{{ url('/visual-simulator-assets/sample-1-protan.png') }}';
-      });
-
-      btnDeutan.addEventListener('click', () => {
-        simulatedImg.src = '{{ url('/visual-simulator-assets/sample-1-deutan.png') }}';
-      });
-
-      btnTritan.addEventListener('click', () => {
-        simulatedImg.src = '{{ url('/visual-simulator-assets/sample-1-tritan.png') }}';
-      });
-    </script>
-  </x-slot>
 </x-app-layout>

@@ -139,7 +139,7 @@
           </div>
           <h2 class="font-semibold text-xl text-red-500">AI Tes Diagnosis Adaptif</h2>
           <p>Tes ishihara berbasis AI untuk mendeteksi jenis buta warna dengan pendekatan personal.</p>
-          <a href="#" class="btn btn-wide bg-primary">Kunjungi</a>
+          <a href="{{ route('adaptive-ishihara-test') }}" class="btn btn-wide bg-primary">Kunjungi</a>
         </div>
       </div>
       <div class="card bg-orange-50 shadow-sm">
@@ -155,7 +155,7 @@
           </div>
           <h2 class="font-semibold text-xl text-orange-500">Direktori Dokter & Rujukan</h2>
           <p>Database dokter spesialis mata dan layanan kesehatan.</p>
-          <a href="#" class="btn btn-wide bg-primary">Kunjungi</a>
+          <a href="{{ route('direktori-dokter-rujukan') }}" class="btn btn-wide bg-primary">Kunjungi</a>
         </div>
       </div>
       <div class="card bg-blue-50 shadow-sm">
@@ -171,7 +171,7 @@
           </div>
           <h2 class="font-semibold text-xl text-blue-500">Pusat Edukasi</h2>
           <p>Artikel, Video, dan alat Edukasi.</p>
-          <a href="#" class="btn btn-wide bg-primary">Kunjungi</a>
+          <a href="{{ route('pusat-edukasi') }}" class="btn btn-wide bg-primary">Kunjungi</a>
         </div>
       </div>
     </div>
@@ -193,7 +193,7 @@
                 <p>Mulai tes diagnosis.</p>
               </div>
             </div>
-            <a href="#" class="stretched-link" aria-label="Tes Buta Warna"></a>
+            <a href="{{ route('adaptive-ishihara-test') }}" class="stretched-link" aria-label="Tes Buta Warna"></a>
           </div>
         </div>
         <div class="card bg-base-100 border">
@@ -221,7 +221,7 @@
                 <p>Cari profesional mata.</p>
               </div>
             </div>
-            <a href="#" class="stretched-link" aria-label="Cari DOkter"></a>
+            <a href="{{ route('direktori-dokter-rujukan') }}" class="stretched-link" aria-label="Cari DOkter"></a>
           </div>
         </div>
       </div>

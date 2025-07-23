@@ -252,27 +252,33 @@
       const btnDeutan = document.querySelector('.bc-deutan');
       const btnTritan = document.querySelector('.bc-tritan');
 
-      jenisSimulasi.addEventListener('click', () => {
+      function closeJenisSimulasi() {
         for (let i = 0; i < btnBlindcolor.length; i++) {
           btnBlindcolor[i].classList.toggle('hidden');
         }
         panah.classList.toggle('rotate-180');
-      });
+      }
+
+      jenisSimulasi.addEventListener('click', closeJenisSimulasi);
 
       btnGrayscale.addEventListener('click', () => {
         simulatedImg.src = '{{ url('/visual-simulator-assets/sample-1-grayscale.png') }}';
+        closeJenisSimulasi()
       });
 
       btnProtan.addEventListener('click', () => {
         simulatedImg.src = '{{ url('/visual-simulator-assets/sample-1-protan.png') }}';
+        closeJenisSimulasi()
       });
 
       btnDeutan.addEventListener('click', () => {
         simulatedImg.src = '{{ url('/visual-simulator-assets/sample-1-deutan.png') }}';
+        closeJenisSimulasi()
       });
 
       btnTritan.addEventListener('click', () => {
         simulatedImg.src = '{{ url('/visual-simulator-assets/sample-1-tritan.png') }}';
+        closeJenisSimulasi()
       });
     </script>
   </x-slot>
