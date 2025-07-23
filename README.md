@@ -40,7 +40,7 @@ UI:
 - [x] Visual Simulator
 - [ ] Tes Diagnosis
 - [x] Direktori Dokter & Rujukan
-- [ ] Pusat Edukasi
+- [x] Pusat Edukasi
 - [ ] Responsive Design
 
 Feature:
