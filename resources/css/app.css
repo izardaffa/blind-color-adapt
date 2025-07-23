@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@plugin "daisyui";
+
+* {
+  box-sizing: border-box;
+}
+
+.text-primary {
+  @apply bg-linear-to-r from-blue-500 from-45% to-purple-500 to-100% bg-clip-text text-transparent
+}
+
+.bg-primary {
+  @apply bg-linear-to-r from-blue-500 from-45% to-purple-500 to-100% text-white rounded-lg
+}
+
+.stretched-link {
+  @apply absolute inset-0 z-10
+}
+
+/*  text-5xl font-extrabold */
