@@ -45,7 +45,7 @@ UI:
 
 Feature:
 - [ ] Login/Register
-- [ ] Extension (Ongoing)
+- [x] Extension (Ongoing)
 - [ ] AI Chatbot
 - [x] Visual Simulator (Static Page)
 - [ ] Tes Diagnosis

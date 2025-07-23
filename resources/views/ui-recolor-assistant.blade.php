@@ -12,7 +12,7 @@
     <div>
       <a class="btn btn-outline me-2">Reset</a>
       <a class="btn btn-outline me-2"><i class="fa-solid fa-share-nodes"></i> Bagikan</a>
-      <a class="btn btn-info text-white"><i class="fa-solid fa-download"></i> Unduh Plugin</a>
+      <a href="{{ url('/extensions.zip') }}" class="btn btn-info text-white"><i class="fa-solid fa-download"></i> Unduh Plugin</a>
     </div>
   </div>
 
@@ -107,7 +107,7 @@
             <h2 class="font-semibold mb-4">Contoh antarmuka web:</h2>
             {{-- <img src="{{ url('/ui-recolor-assistant-assets/preview-normal.png') }}" alt="preview normal" class="mb-4"> --}}
             {{-- <img src="{{ url('/ui-recolor-assistant-assets/preview-protan.png') }}" alt="preview filter protanopia" class="mb-4"> --}}
-            <img src="{{ url('/ui-recolor-assistant-assets/preview.png') }}" alt="preview" class="mb-4">
+            <img src="{{ url('/ui-recolor-assistant-assets/preview-real.png') }}" alt="preview" class="mb-4">
           </div>
 
           <input type="radio" name="my_tabs_2" class="tab" aria-label="Installasi" />
@@ -115,7 +115,7 @@
             <div class="mb-2">
               <h2 class="font-semibold">1. Unduh Ekstensi</h2>
               <p>Unduh ekstensi ColorAdapt+.</p>
-              <a class="btn btn-info text-white"><i class="fa-solid fa-download"></i> Unduh Plugin</a>
+              <a href="{{ url('/extensions.zip') }}" class="btn btn-info text-white"><i class="fa-solid fa-download"></i> Unduh Plugin</a>
               <p>Lalu ekstrak file .zip yang sudah terunduh.</p>
             </div>
             
