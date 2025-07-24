@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WarnaBotController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -25,6 +26,8 @@ Route::get('/ui-recolor-assistant', function () {
 Route::get('/ai-assistant-warnabot', function () {
     return view('ai-assistant-warnabot');
 })->name('ai-assistant-warnabot');
+
+Route::post('/ai-assistant-warnabot', [WarnaBotController::class, 'chat'])->name('ai-assistant-warnabot-response');
 
 Route::get('/visual-simulator', function () {
     return view('visual-simulator');

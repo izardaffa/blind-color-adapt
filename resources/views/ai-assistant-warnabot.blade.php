@@ -54,14 +54,14 @@
               Halo! Saya WarnaBot, asisten AI yang siap membantu Anda dengan pertanyaan seputar buta warna. Apa yang ingin Anda ketahui?
             </div>
           </div>
-          <div class="chat chat-end">
+          {{-- <div class="chat chat-end">
             <div class="chat-bubble">Apa penyebab buta warna?</div>
           </div>
           <div class="chat chat-start">
             <div class="chat-bubble">
               Buta warna umumnya disebabkan oleh faktor genetik. Kondisi ini terjadi ketika sel-sel kerucut di mata yang bertanggung jawab untuk mendeteksi warna tidak berfungsi dengan baik atau tidak ada sama sekali.
             </div>
-          </div>
+          </div> --}}
         </div>
 
         <!-- Input Area -->
@@ -86,4 +86,80 @@
       </div>
     </div>
   </div>
+
+  <x-slot:script>
+    <script>
+      const chatContainer = document.querySelector('.px-8.py-4.flex-1.overflow-y-auto');
+      const chatForm = document.getElementById('chatForm');
+      const messageInput = document.getElementById('messageInput');
+      const sendButton = document.getElementById('sendButton');
+
+      chatForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const message = messageInput.value.trim();
+        if (!message) return;
+
+        // Add user message to chat
+        addMessage(message, 'user');
+        
+        // Clear input and disable button
+        messageInput.value = '';
+        sendButton.disabled = true;
+        sendButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+
+        // Send request to API
+        fetch('{{ route('ai-assistant-warnabot-response') }}', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+          },
+          body: JSON.stringify({
+            text: message,
+          }),
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.response) {
+            addMessage(data.response, 'bot');
+          } else if (data.error) {
+            addMessage('Maaf, terjadi kesalahan: ' + data.error, 'bot');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          addMessage('Maaf, terjadi kesalahan saat menghubungi server.', 'bot');
+        })
+        .finally(() => {
+          // Re-enable button
+          sendButton.disabled = false;
+          sendButton.innerHTML = '<i class="fa-solid fa-paper-plane"></i>';
+        });
+      });
+
+      function addMessage(message, sender) {
+        const chatDiv = document.createElement('div');
+        chatDiv.className = sender === 'user' ? 'chat chat-end' : 'chat chat-start';
+        
+        const bubbleDiv = document.createElement('div');
+        bubbleDiv.className = 'chat-bubble';
+        bubbleDiv.textContent = message;
+        
+        chatDiv.appendChild(bubbleDiv);
+        chatContainer.appendChild(chatDiv);
+        
+        // Scroll to bottom
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      }
+
+      // Handle quick questions
+      document.querySelectorAll('.link').forEach(link => {
+        link.addEventListener('click', function() {
+          messageInput.value = this.textContent;
+          chatForm.dispatchEvent(new Event('submit'));
+        });
+      });
+    </script>
+  </x-slot>
 </x-app-layout>
