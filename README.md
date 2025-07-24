@@ -29,6 +29,21 @@ Run:
 composer run dev
 ```
 
+Setup chatbot:
+
+Buat API Key di [AI Studio](https://aistudio.google.com/apikey).
+
+Unduh sertifikat SSL (untuk jaga-jaga) [di sini](https://curl.se/ca/cacert.pem).
+
+Ubah file .env.
+
+```.env
+...
+GEMINI_API_KEY=your_api_key_here
+CURL_CA_BUNDLE_PATH=<your-path>/cacert.pem
+SSL_VERIFY=false
+```
+
 ## Todo
 
 UI: 
@@ -46,6 +61,6 @@ UI:
 Feature:
 - [ ] Login/Register
 - [x] Extension (Ongoing)
-- [ ] AI Chatbot
+- [x] AI Chatbot
 - [x] Visual Simulator (Static Page)
 - [ ] Tes Diagnosis
