@@ -53,7 +53,7 @@ UI:
 - [x] UI Recolor Assistant
 - [x] WarnaBot
 - [x] Visual Simulator
-- [ ] Tes Diagnosis
+- [x] Tes Diagnosis
 - [x] Direktori Dokter & Rujukan
 - [x] Pusat Edukasi
 - [ ] Responsive Design

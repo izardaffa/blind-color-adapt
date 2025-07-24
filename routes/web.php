@@ -33,9 +33,9 @@ Route::get('/visual-simulator', function () {
     return view('visual-simulator');
 })->name('visual-simulator');
 
-Route::get('/adaptive-ishihara-test', function () {
-    return view('adaptive-ishihara-test');
-})->name('adaptive-ishihara-test');
+Route::get('/tes-diagnosis-adaptif', function () {
+    return view('tes-diagnosis-adaptif');
+})->name('tes-diagnosis-adaptif');
 
 Route::get('/direktori-dokter-rujukan', function () {
     return view('direktori-dokter-rujukan');
