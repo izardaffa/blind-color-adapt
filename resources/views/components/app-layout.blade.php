@@ -20,7 +20,7 @@
       </a>
     </div>
     <div class="flex-none">
-      <a href="{{ route('ai-assistant-warnabot') }}" class="btn btn-sm mr-4"><i class="fa-solid fa-robot"></i> WarnaBot</a>
+      <a href="{{ route('ai-assistant-warnabot.index') }}" class="btn btn-sm mr-4"><i class="fa-solid fa-robot"></i> WarnaBot</a>
       <a href="{{ route('auth.login') }}" class="btn btn-sm mr-4"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
       <a href="{{ route('auth.register') }}" class="btn btn-sm mr-4"><i class="fa-solid fa-user-plus"></i> Register</a>
       {{-- <div class="dropdown dropdown-end">

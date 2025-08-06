@@ -100,6 +100,12 @@
         const message = messageInput.value.trim();
         if (!message) return;
 
+        // Validasi panjang pesan
+        if (message.length > 500) {
+          alert('Pertanyaan terlalu panjang. Maksimal 500 karakter.');
+          return;
+        }
+
         // Add user message to chat
         addMessage(message, 'user');
         
@@ -108,8 +114,11 @@
         sendButton.disabled = true;
         sendButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
 
+        // Show typing indicator
+        showTypingIndicator();
+
         // Send request to API
-        fetch('{{ route('ai-assistant-warnabot-response') }}', {
+        fetch('{{ route('ai-assistant-warnabot.chat') }}', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -121,6 +130,8 @@
         })
         .then(response => response.json())
         .then(data => {
+          removeTypingIndicator();
+          
           if (data.response) {
             addMessage(data.response, 'bot');
           } else if (data.error) {
@@ -128,6 +139,7 @@
           }
         })
         .catch(error => {
+          removeTypingIndicator();
           console.error('Error:', error);
           addMessage('Maaf, terjadi kesalahan saat menghubungi server.', 'bot');
         })
@@ -144,7 +156,14 @@
         
         const bubbleDiv = document.createElement('div');
         bubbleDiv.className = 'chat-bubble';
-        bubbleDiv.textContent = message;
+        
+        // Clean any remaining formatting
+        const cleanMessage = message.replace(/\*\*(.*?)\*\*/g, '$1')
+                                .replace(/\*(.*?)\*/g, '$1')
+                                .replace(/`(.*?)`/g, '$1')
+                                .replace(/#{1,6}\s*/g, '');
+    
+        bubbleDiv.textContent = cleanMessage;
         
         chatDiv.appendChild(bubbleDiv);
         chatContainer.appendChild(chatDiv);
@@ -153,12 +172,44 @@
         chatContainer.scrollTop = chatContainer.scrollHeight;
       }
 
+      function showTypingIndicator() {
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'chat chat-start';
+        typingDiv.id = 'typing-indicator';
+        
+        const bubbleDiv = document.createElement('div');
+        bubbleDiv.className = 'chat-bubble';
+        bubbleDiv.innerHTML = '<span class="loading loading-dots loading-sm"></span>';
+        
+        typingDiv.appendChild(bubbleDiv);
+        chatContainer.appendChild(typingDiv);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      }
+
+      function removeTypingIndicator() {
+        const typingIndicator = document.getElementById('typing-indicator');
+        if (typingIndicator) {
+          typingIndicator.remove();
+        }
+      }
+
       // Handle quick questions
       document.querySelectorAll('.link').forEach(link => {
         link.addEventListener('click', function() {
           messageInput.value = this.textContent;
           chatForm.dispatchEvent(new Event('submit'));
         });
+      });
+
+      // Auto-focus input
+      messageInput.focus();
+
+      // Handle Enter key
+      messageInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          chatForm.dispatchEvent(new Event('submit'));
+        }
       });
     </script>
   </x-slot>
