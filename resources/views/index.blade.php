@@ -139,7 +139,7 @@
           </div>
           <h2 class="font-semibold text-xl text-red-500">Tes Diagnosis Adaptif</h2>
           <p>Tes ishihara untuk mendeteksi jenis buta warna dengan pendekatan personal.</p>
-          <a href="{{ route('tes-diagnosis-adaptif') }}" class="btn btn-wide bg-primary">Kunjungi</a>
+          <a href="{{ route('tes-diagnosis-adaptif/index') }}" class="btn btn-wide bg-primary">Kunjungi</a>
         </div>
       </div>
       <div class="card bg-orange-50 shadow-sm">
@@ -193,7 +193,7 @@
                 <p>Mulai tes diagnosis.</p>
               </div>
             </div>
-            <a href="{{ route('tes-diagnosis-adaptif') }}" class="stretched-link" aria-label="Tes Buta Warna"></a>
+            <a href="{{ route('tes-diagnosis-adaptif/index') }}" class="stretched-link" aria-label="Tes Buta Warna"></a>
           </div>
         </div>
         <div class="card bg-base-100 border">
