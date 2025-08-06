@@ -54,7 +54,7 @@
           <p>3 Pertanyaan</p>
           <p>Sertifikat Hasil</p>
         </div>
-        <a href="{{ route('tes-diagnosis-adaptif/test') }}" class="btn btn-info btn-wide text-white m-auto">Mulai Tes Diagnosis</a>
+        <a href="{{ route('tes-diagnosis-adaptif.test') }}" class="btn btn-info btn-wide text-white m-auto">Mulai Tes Diagnosis</a>
       </div>
     </div>
   </section>

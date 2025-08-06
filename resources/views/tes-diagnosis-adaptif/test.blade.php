@@ -262,7 +262,7 @@
         btnSubmit.textContent = 'Sedang memproses...';
         
         try {
-          const response = await fetch('{{ route('tes-diagnosis-adaptif/validate') }}', {
+          const response = await fetch('{{ route('tes-diagnosis-adaptif.validate') }}', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -349,7 +349,7 @@
         
         // Fungsi untuk menutup modal
         window.closeModal = function() {
-          window.location.href = '{{ route('tes-diagnosis-adaptif/index') }}';
+          window.location.href = '{{ route('tes-diagnosis-adaptif.index') }}';
           // document.body.removeChild(modal);
           // delete window.closeModal;
           // delete window.printResult;

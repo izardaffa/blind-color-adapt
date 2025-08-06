@@ -10,12 +10,12 @@ class TestDiagnosisAdaptifController extends Controller
 {
     public function index()
     {
-        return view('tes-diagnosis-adaptif/index');
+        return view('tes-diagnosis-adaptif.index');
     }
 
     public function test()
     {
-        return view('tes-diagnosis-adaptif/test');
+        return view('tes-diagnosis-adaptif.test');
     }
 
     public function validate(Request $request)
