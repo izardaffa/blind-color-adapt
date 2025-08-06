@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\DirektoriDokterRujukanController;
+use App\Http\Controllers\PusatEdukasiController;
 use App\Http\Controllers\TestDiagnosisAdaptifController;
+use App\Http\Controllers\UIRecolorAssistantController;
+use App\Http\Controllers\VisualSimulatorController;
 use App\Http\Controllers\WarnaBotController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,9 +28,9 @@ Route::get('/profile-form', function () {
 })->name('auth.identity');
 
 // Extension Download
-Route::get('/ui-recolor-assistant', function () {
-    return view('ui-recolor-assistant');
-})->name('ui-recolor-assistant');
+Route::prefix('ui-recolor-assistant')->controller(UIRecolorAssistantController::class)->group(function () {
+    Route::get('/', 'index')->name('ui-recolor-assistant.index');
+});
 
 // AI Chatbot
 Route::prefix('ai-assistant-warnabot')->controller(WarnaBotController::class)->group(function () {
@@ -36,9 +40,9 @@ Route::prefix('ai-assistant-warnabot')->controller(WarnaBotController::class)->g
 
 
 // Visual Simulator
-Route::get('/visual-simulator', function () {
-    return view('visual-simulator');
-})->name('visual-simulator');
+Route::prefix('visual-simulator')->controller(VisualSimulatorController::class)->group(function () {
+    Route::get('/', 'index')->name('visual-simulator.index');
+});
 
 // Ishihara Test
 Route::prefix('tes-diagnosis-adaptif')->controller(TestDiagnosisAdaptifController::class)->group(function () {
@@ -48,11 +52,11 @@ Route::prefix('tes-diagnosis-adaptif')->controller(TestDiagnosisAdaptifControlle
 });
 
 // Doctor List
-Route::get('/direktori-dokter-rujukan', function () {
-    return view('direktori-dokter-rujukan');
-})->name('direktori-dokter-rujukan');
+Route::prefix('direktori-dokter-rujukan')->controller(DirektoriDokterRujukanController::class)->group(function () {
+    Route::get('/', 'index')->name('direktori-dokter-rujukan.index');
+});
 
 // Blog & Article
-Route::get('/pusat-edukasi', function () {
-    return view('pusat-edukasi');
-})->name('pusat-edukasi');
+Route::prefix('pusat-edukasi')->controller(PusatEdukasiController::class)->group(function () {
+    Route::get('/', 'index')->name('pusat-edukasi.index');
+});

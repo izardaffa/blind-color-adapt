@@ -91,7 +91,7 @@
           </div>
           <h2 class="font-semibold text-xl text-blue-500">UI Recolor Assistant</h2>
           <p>Plugin dan ekstensi untuk menyesuaikan warna antarmuka web agar lebih accesible.</p>
-          <a href="{{ route('ui-recolor-assistant') }}" class="btn btn-wide bg-primary">Kunjungi</a>
+          <a href="{{ route('ui-recolor-assistant.index') }}" class="btn btn-wide bg-primary">Kunjungi</a>
         </div>
       </div>
       <div class="card bg-green-50 shadow-sm">
@@ -123,7 +123,7 @@
           </div>
           <h2 class="font-semibold text-xl text-purple-500">Visual Simulator</h2>
           <p>Simulasi AR  yang memperlihatkan dunia dari sudut pandang berbagai jenis buta warna.</p>
-          <a href="{{ route('visual-simulator') }}" class="btn btn-wide bg-primary">Kunjungi</a>
+          <a href="{{ route('visual-simulator.index') }}" class="btn btn-wide bg-primary">Kunjungi</a>
         </div>
       </div>
       <div class="card bg-red-50 shadow-sm">
@@ -155,7 +155,7 @@
           </div>
           <h2 class="font-semibold text-xl text-orange-500">Direktori Dokter & Rujukan</h2>
           <p>Database dokter spesialis mata dan layanan kesehatan.</p>
-          <a href="{{ route('direktori-dokter-rujukan') }}" class="btn btn-wide bg-primary">Kunjungi</a>
+          <a href="{{ route('direktori-dokter-rujukan.index') }}" class="btn btn-wide bg-primary">Kunjungi</a>
         </div>
       </div>
       <div class="card bg-blue-50 shadow-sm">
@@ -171,7 +171,7 @@
           </div>
           <h2 class="font-semibold text-xl text-blue-500">Pusat Edukasi</h2>
           <p>Artikel, Video, dan alat Edukasi.</p>
-          <a href="{{ route('pusat-edukasi') }}" class="btn btn-wide bg-primary">Kunjungi</a>
+          <a href="{{ route('pusat-edukasi.index') }}" class="btn btn-wide bg-primary">Kunjungi</a>
         </div>
       </div>
     </div>
@@ -221,7 +221,7 @@
                 <p>Cari profesional mata.</p>
               </div>
             </div>
-            <a href="{{ route('direktori-dokter-rujukan') }}" class="stretched-link" aria-label="Cari DOkter"></a>
+            <a href="{{ route('direktori-dokter-rujukan.index') }}" class="stretched-link" aria-label="Cari DOkter"></a>
           </div>
         </div>
       </div>
