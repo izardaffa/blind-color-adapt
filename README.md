@@ -64,3 +64,7 @@ Feature:
 - [x] AI Chatbot
 - [x] Visual Simulator (Static Page)
 - [ ] Tes Diagnosis
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
