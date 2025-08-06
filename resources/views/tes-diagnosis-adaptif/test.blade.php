@@ -349,9 +349,10 @@
         
         // Fungsi untuk menutup modal
         window.closeModal = function() {
-          document.body.removeChild(modal);
-          delete window.closeModal;
-          delete window.printResult;
+          window.location.href = '{{ route('tes-diagnosis-adaptif/index') }}';
+          // document.body.removeChild(modal);
+          // delete window.closeModal;
+          // delete window.printResult;
         };
         
         // Fungsi untuk mencetak hasil
